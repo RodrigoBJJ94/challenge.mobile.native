@@ -19,7 +19,8 @@ export default function App() {
     <View style={Styles.appView}>
       <NavigationContainer>
         <Tab.Navigator initialRouteName="1"
-          screenOptions={Styles.tabNavigator} backBehavior={"history"} >
+          screenOptions={Styles.tabNavigator}
+          backBehavior={"history"} >
           <Tab.Screen name="1" component={HomeOne} />
           <Tab.Screen name="2" component={HomeTwo} />
           <Tab.Screen name="3" component={HomeThree} />
@@ -40,16 +41,7 @@ const Styles = StyleSheet.create({
     flex: 1,
   },
   tabNavigator: {
-    tabBarLabelStyle: {
-      fontSize: 0,
-    },
-    tabBarItemStyle: {
-      width: 0,
-      backgroundColor: '#9e487a',
-      height: 0,
-    },
     tabBarStyle: {
-      backgroundColor: '#9e487a',
       height: 0,
     },
   }
