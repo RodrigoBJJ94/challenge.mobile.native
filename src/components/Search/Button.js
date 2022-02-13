@@ -15,6 +15,6 @@ const Styles = StyleSheet.create({
         alignSelf: 'flex-end',
         marginTop: -90,
         marginBottom: 30,
-        marginRight: 40
+        marginRight: 40,
     }
 });

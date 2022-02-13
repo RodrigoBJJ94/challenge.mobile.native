@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import NotLoading from "./NotLoading";
-import DataOne from "./DataOne";
-import DataTwo from "./DataTwo";
+import Data from "./Data";
 
 export default function Details({ navigation, route }) {
     const [list, setList] = useState({});
@@ -39,13 +38,9 @@ export default function Details({ navigation, route }) {
         <SafeAreaView style={Styles.viewDetails}>
             {list.data && (
                 <SafeAreaView>
-                    {animeData !== "naruto" ? list.data.slice(0, 1).map((anime) => (
+                    {list.data.slice(0, 1).map((anime) => (
                         <SafeAreaView key={anime.id}>
-                            <DataOne navigation={navigation} anime={anime} animeData={animeData} />
-                        </SafeAreaView>
-                    )) : list.data.slice(2, 3).map((anime) => (
-                        <SafeAreaView key={anime.id}>
-                            <DataTwo navigation={navigation} anime={anime} animeData={animeData} />
+                            <Data navigation={navigation} anime={anime} animeData={animeData} />
                         </SafeAreaView>
                     ))}
                 </SafeAreaView>
