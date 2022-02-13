@@ -2,16 +2,9 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import HomeOne from "./components/Home/HomeOne/HomeOne";
-import HomeTwo from "./components/Home/HomeTwo/HomeTwo";
-import HomeThree from "./components/Home/HomeThree/HomeThree";
-import HomeFour from "./components/Home/HomeFour/HomeFour";
-import HomeFive from "./components/Home/HomeFive/HomeFive";
-import HomeSix from "./components/Home/HomeSix/HomeSix";
-import HomeSeven from "./components/Home/HomeSeven/HomeSeven";
+import Home from "./Home";
 import Search from "./components/Search/Search";
 import Details from "./components/Details/Details";
-import Home from "./Home";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -19,8 +12,10 @@ export default function App() {
   return (
     <View style={Styles.appView}>
       <NavigationContainer>
-        <Tab.Navigator initialRouteName="Home" backBehavior={"history"}
-          screenOptions={{ swipeEnabled: false, tabBarStyle: { height: 0 } }}>
+        <Tab.Navigator
+          initialRouteName="Home"
+          backBehavior={"history"}
+          screenOptions={Styles.navigator}>
           <Tab.Screen name="Home" component={Home} />
           <Tab.Screen name="Search" component={Search} />
           <Tab.Screen name="Details" component={Details} />
@@ -30,7 +25,26 @@ export default function App() {
   );
 };
 
+const Styles = StyleSheet.create({
+  appView: {
+    flex: 1,
+  },
+  navigator: {
+    tabBarStyle: {
+      height: 0
+    },
+    swipeEnabled: false,
+  }
+});
+
 /*
+import HomeOne from "./components/Home/HomeOne/HomeOne";
+import HomeTwo from "./components/Home/HomeTwo/HomeTwo";
+import HomeThree from "./components/Home/HomeThree/HomeThree";
+import HomeFour from "./components/Home/HomeFour/HomeFour";
+import HomeFive from "./components/Home/HomeFive/HomeFive";
+import HomeSix from "./components/Home/HomeSix/HomeSix";
+import HomeSeven from "./components/Home/HomeSeven/HomeSeven";
 <Tab.Screen name="2" component={HomeTwo} />
           <Tab.Screen name="3" component={HomeThree} />
           <Tab.Screen name="4" component={HomeFour} />
@@ -40,8 +54,3 @@ export default function App() {
           
 */
 
-const Styles = StyleSheet.create({
-  appView: {
-    flex: 1,
-  }
-});
