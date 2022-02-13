@@ -11,6 +11,7 @@ import HomeSix from "./components/Home/HomeSix/HomeSix";
 import HomeSeven from "./components/Home/HomeSeven/HomeSeven";
 import Search from "./components/Search/Search";
 import Details from "./components/Details/Details";
+import Home from "./Home";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -18,31 +19,29 @@ export default function App() {
   return (
     <View style={Styles.appView}>
       <NavigationContainer>
-        <Tab.Navigator initialRouteName="1"
-          screenOptions={Styles.tabNavigator}
-          backBehavior={"history"} >
-          <Tab.Screen name="1" component={HomeOne} />
-          <Tab.Screen name="2" component={HomeTwo} />
-          <Tab.Screen name="3" component={HomeThree} />
-          <Tab.Screen name="4" component={HomeFour} />
-          <Tab.Screen name="5" component={HomeFive} />
-          <Tab.Screen name="6" component={HomeSix} />
-          <Tab.Screen name="7" component={HomeSeven} />
-          <Tab.Screen name="8" component={Search} />
-          <Tab.Screen name="9" component={Details} />
+        <Tab.Navigator initialRouteName="Home" backBehavior={"history"}
+          screenOptions={{ swipeEnabled: false, tabBarStyle: { height: 0 } }}>
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Search" component={Search} />
+          <Tab.Screen name="Details" component={Details} />
         </Tab.Navigator>
       </NavigationContainer>
     </View>
   );
 };
 
+/*
+<Tab.Screen name="2" component={HomeTwo} />
+          <Tab.Screen name="3" component={HomeThree} />
+          <Tab.Screen name="4" component={HomeFour} />
+          <Tab.Screen name="5" component={HomeFive} />
+          <Tab.Screen name="6" component={HomeSix} />
+          <Tab.Screen name="7" component={HomeSeven} />
+          
+*/
+
 const Styles = StyleSheet.create({
   appView: {
     flex: 1,
-  },
-  tabNavigator: {
-    tabBarStyle: {
-      height: 0,
-    },
   }
 });

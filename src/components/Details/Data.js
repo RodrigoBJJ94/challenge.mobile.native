@@ -3,7 +3,7 @@ import { SafeAreaView, Text, TouchableOpacity, Image, ScrollView, StyleSheet } f
 import Icon from "react-native-vector-icons/Feather";
 import YoutubePlayer from "react-native-youtube-iframe";
 
-export default function Data({ navigation, anime, animeData }) {
+export default function DataOne({ navigation, anime, animeData }) {
     return (
         <>
             <SafeAreaView style={Styles.viewDirection}>

@@ -5,7 +5,7 @@ export default function Data({ navigation, anime }) {
     return (
         <>
             <TouchableOpacity onPress={() => {
-                navigation.navigate("9", {
+                navigation.navigate("Details", {
                     anime: anime.attributes.canonicalTitle
                 });
             }}>
