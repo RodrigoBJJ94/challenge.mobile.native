@@ -1,6 +1,7 @@
 import React from "react";
-import { SafeAreaView, Text, TouchableOpacity, ActivityIndicator } from "react-native";
+import { SafeAreaView, Text, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
+import { UIActivityIndicator } from "react-native-indicators";
 import Styles from "./Styles";
 
 export default function NotLoading() {
@@ -17,7 +18,7 @@ export default function NotLoading() {
                     <Text style={Styles.goBack}>Back</Text>
                 </TouchableOpacity>
             </SafeAreaView>
-            <ActivityIndicator color="#fe1487" style={Styles.load} />
+            <UIActivityIndicator color="#fe1487" size={24} style={Styles.load} />
         </SafeAreaView>
     );
 };

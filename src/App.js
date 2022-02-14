@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { SafeAreaView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Home from "./components/Home/Home";
@@ -11,7 +11,7 @@ const Tab = createMaterialTopTabNavigator();
 
 export default function App() {
   return (
-    <View style={Styles.appView}>
+    <SafeAreaView style={Styles.appView}>
       <NavigationContainer>
         <Tab.Navigator screenOptions={Styles.navigator}
           initialRouteName="Home" backBehavior={"history"}>
@@ -20,6 +20,6 @@ export default function App() {
           <Tab.Screen name="Details" component={Details} />
         </Tab.Navigator>
       </NavigationContainer>
-    </View>
+    </SafeAreaView>
   );
 };

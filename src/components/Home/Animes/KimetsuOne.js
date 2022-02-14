@@ -20,7 +20,7 @@ export default function KimetsuOne({ navigation }) {
             {
                 kimetsu.data && (
                     <SafeAreaView style={{}}>
-                        {kimetsu.data.slice(6, 7).map((anime) => (
+                        {kimetsu.data.slice(5, 6).map((anime) => (
                             <SafeAreaView key={anime.id} style={Styles.viewDirection}>
                                 <ImageHome navigation={navigation} anime={anime} />
                                 <TitleKimetsu />

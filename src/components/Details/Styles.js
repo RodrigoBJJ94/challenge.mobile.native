@@ -46,6 +46,9 @@ export default StyleSheet.create({
         borderRadius: 10,
         marginTop: 20,
     },
+    viewImage: {
+        alignItems: "center",
+    },
     title: {
         color: "#ffffff",
         fontSize: 17.5,
@@ -58,6 +61,6 @@ export default StyleSheet.create({
         backgroundColor: "#3f3f3f",
     },
     load: {
-        marginTop: 5,
+        marginTop: -695,
     }
 });

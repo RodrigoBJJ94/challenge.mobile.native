@@ -8,7 +8,6 @@ export default StyleSheet.create({
         width: Dimensions.get("screen").width,
     },
     buttonSearch: {
-        backgroundColor: "rgba(0, 0, 0, 0)",
         width: "100%",
         alignItems: "center",
         height: 65,
@@ -18,7 +17,6 @@ export default StyleSheet.create({
         alignSelf: "flex-end",
         paddingTop: 20,
         paddingRight: 25,
-        backgroundColor: "rgba(0, 0, 0, 0)",
     },
     image: {
         width: 340,

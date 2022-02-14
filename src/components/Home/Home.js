@@ -10,13 +10,14 @@ import Jujutsu from "./Animes/Jujutsu";
 import Naruto from "./Animes/Naruto";
 import Attack from "./Animes/Attack";
 import Hunter from "./Animes/Hunter";
+import Styles from "./Styles";
 
 export default function Home({ navigation }) {
     const { width } = Dimensions.get("screen");
     const scrollX = React.useRef(new Animated.Value(0)).current;
 
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={Styles.homeView}>
             <Statusbar />
             <SafeAreaView style={StyleSheet.absoluteFillObject}>
                 {background.map((image, index) => {
@@ -33,9 +34,10 @@ export default function Home({ navigation }) {
                 })}
             </SafeAreaView>
             <Button navigation={navigation} />
-            <Animated.ScrollView horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false} onScroll={Animated.event(
-                [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-                { useNativeDriver: true })}>
+            <Animated.ScrollView horizontal={true} pagingEnabled={true}
+                showsHorizontalScrollIndicator={false} onScroll={Animated.event(
+                    [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+                    { useNativeDriver: true })}>
                 <KimetsuOne navigation={navigation} />
                 <OnePiece navigation={navigation} />
                 <KimetsuTwo navigation={navigation} />
