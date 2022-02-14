@@ -8,7 +8,7 @@ export default function Naruto({ navigation }) {
     const [naruto, setNaruto] = useState({});
 
     useEffect(() => {
-        fetch(`https://kitsu.io/api/edge/anime?filter[text]=naruto`)
+        fetch(`https://kitsu.io/api/edge/anime?filter[text]=naruto-shippuden`)
             .then(res => res.json())
             .then(res => {
                 setNaruto(res);
@@ -20,7 +20,7 @@ export default function Naruto({ navigation }) {
             {
                 naruto.data && (
                     <SafeAreaView style={{}}>
-                        {naruto.data.slice(2, 3).map((anime) => (
+                        {naruto.data.slice(0, 1).map((anime) => (
                             <SafeAreaView key={anime.id} style={Styles.viewDirection}>
                                 <ImageHome navigation={navigation} anime={anime} />
                                 <TitleEnJp anime={anime} />

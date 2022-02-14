@@ -8,7 +8,7 @@ export default function KimetsuOne({ navigation }) {
     const [kimetsu, setKimetsu] = useState({});
 
     useEffect(() => {
-        fetch(`https://kitsu.io/api/edge/anime?filter[text]=kimetsu`)
+        fetch(`https://kitsu.io/api/edge/anime?filter[text]="kimetsu-no-yaiba-yuukaku-hen`)
             .then(res => res.json())
             .then(res => {
                 setKimetsu(res);
@@ -20,7 +20,7 @@ export default function KimetsuOne({ navigation }) {
             {
                 kimetsu.data && (
                     <SafeAreaView style={{}}>
-                        {kimetsu.data.slice(5, 6).map((anime) => (
+                        {kimetsu.data.slice(0, 1).map((anime) => (
                             <SafeAreaView key={anime.id} style={Styles.viewDirection}>
                                 <ImageHome navigation={navigation} anime={anime} />
                                 <TitleKimetsu />
