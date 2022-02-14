@@ -1,7 +1,7 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
-import Styles from "./Styles";
+import Styles from "./Animes/Styles";
 
 export default function Button({ navigation }) {
     return (

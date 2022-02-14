@@ -1,6 +1,6 @@
 import React from "react";
 import { TouchableOpacity, Image } from "react-native";
-import Styles from "./Styles";
+import Styles from "./Animes/Styles";
 
 export default function ImageHome({ navigation, anime }) {
     return (
