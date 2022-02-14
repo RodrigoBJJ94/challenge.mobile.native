@@ -3,6 +3,7 @@ import { View, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Home from "./Home";
+import Home2 from "./Home2";
 import Search from "./components/Search/Search";
 import Details from "./components/Details/Details";
 
@@ -13,10 +14,10 @@ export default function App() {
     <View style={Styles.appView}>
       <NavigationContainer>
         <Tab.Navigator
-          initialRouteName="Home"
+          initialRouteName="Home2"
           backBehavior={"history"}
           screenOptions={Styles.navigator}>
-          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Home2" component={Home2} />
           <Tab.Screen name="Search" component={Search} />
           <Tab.Screen name="Details" component={Details} />
         </Tab.Navigator>
