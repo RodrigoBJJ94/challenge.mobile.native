@@ -8,7 +8,7 @@ export default function OnePiece({navigation}) {
     const [one, setOne] = useState({});
 
     useEffect(() => {
-        fetch(`https://kitsu.io/api/edge/anime?filter[text]=one`)
+        fetch(`https://kitsu.io/api/edge/anime?filter[text]=one-piece`)
             .then(res => res.json())
             .then(res => {
                 setOne(res);
