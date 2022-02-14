@@ -62,14 +62,14 @@ export default function Home({ navigation }) {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <StatusBar backgroundColor="transparent" translucent={true} />
-            <TouchableOpacity style={Styles.buttonSearch} onPress={() => navigation.navigate("Search")}>
-                <Icon name="search" size={30} color="#dd1b7c" style={Styles.search} />
-            </TouchableOpacity>
             <ScrollView horizontal pagingEnabled={true}>
                 {kimetsu.data && (
                     <SafeAreaView style={{}}>
                         <LinearGradient style={{ flex: 1 }}
                             colors={['#450F20', '#3F1B45', '#8C3D6F', '#924651', '#4D3355', '#5B425C', '#D5676A']}>
+                            <TouchableOpacity style={Styles.buttonSearch} onPress={() => navigation.navigate("Search")}>
+                                <Icon name="search" size={30} color="#dd1b7c" style={Styles.search} />
+                            </TouchableOpacity>
                             {kimetsu.data.slice(7, 8).map((anime) => (
                                 <SafeAreaView key={anime.id} style={Styles.viewDirection}>
                                     <TouchableOpacity onPress={() => {
@@ -93,6 +93,9 @@ export default function Home({ navigation }) {
                     <SafeAreaView style={{}}>
                         <LinearGradient style={{ flex: 1 }}
                             colors={['#5D4F56', '#684A3A', '#9B8378', '#B47D53', '#634965', '#5D3931', '#765639']}>
+                            <TouchableOpacity style={Styles.buttonSearch} onPress={() => navigation.navigate("Search")}>
+                                <Icon name="search" size={30} color="#dd1b7c" style={Styles.search} />
+                            </TouchableOpacity>
                             {one.data.slice(0, 1).map((anime) => (
                                 <SafeAreaView key={anime.id} style={Styles.viewDirection}>
                                     <TouchableOpacity onPress={() => {
@@ -114,106 +117,135 @@ export default function Home({ navigation }) {
                 }
                 {kimetsu.data && (
                     <SafeAreaView style={{}}>
-                        {kimetsu.data.slice(0, 1).map((anime) => (
-                            <SafeAreaView key={anime.id} style={Styles.viewDirection}>
-                                <TouchableOpacity onPress={() => {
-                                    navigation.navigate("Details", {
-                                        anime: anime.attributes.slug
-                                    });
-                                }}>
-                                    <Image style={Styles.image}
-                                        source={{ uri: anime.attributes.posterImage.original }} />
-                                </TouchableOpacity>
-                                <SafeAreaView style={Styles.viewText}>
-                                    <Text style={Styles.title}>Demon Slayer: Kimetsu no Y</Text>
+                        <LinearGradient style={{ flex: 1 }}
+                            colors={['#5A544E', '#200F12', '#157397', '#BF9E7E', '#1C1815', '#345E61', '#918258', '#B79974']}>
+                            <TouchableOpacity style={Styles.buttonSearch} onPress={() => navigation.navigate("Search")}>
+                                <Icon name="search" size={30} color="#dd1b7c" style={Styles.search} />
+                            </TouchableOpacity>
+                            {kimetsu.data.slice(0, 1).map((anime) => (
+                                <SafeAreaView key={anime.id} style={Styles.viewDirection}>
+                                    <TouchableOpacity onPress={() => {
+                                        navigation.navigate("Details", {
+                                            anime: anime.attributes.slug
+                                        });
+                                    }}>
+                                        <Image style={Styles.image}
+                                            source={{ uri: anime.attributes.posterImage.original }} />
+                                    </TouchableOpacity>
+                                    <SafeAreaView style={Styles.viewText}>
+                                        <Text style={Styles.title}>Demon Slayer: Kimetsu no Y</Text>
+                                    </SafeAreaView>
                                 </SafeAreaView>
-                            </SafeAreaView>
-                        ))}
+                            ))}
+                        </LinearGradient>
                     </SafeAreaView>
                 )
                 }
                 {jujutsu.data && (
                     <SafeAreaView style={{}}>
-                        {jujutsu.data.slice(0, 1).map((anime) => (
-                            <SafeAreaView key={anime.id} style={Styles.viewDirection}>
-                                <TouchableOpacity onPress={() => {
-                                    navigation.navigate("Details", {
-                                        anime: anime.attributes.slug
-                                    });
-                                }}>
-                                    <Image style={Styles.image}
-                                        source={{ uri: anime.attributes.posterImage.original }} />
-                                </TouchableOpacity>
-                                <SafeAreaView style={Styles.viewText}>
-                                    <Text style={Styles.title}>{anime.attributes.titles.en_jp}</Text>
+                        <LinearGradient style={{ flex: 1 }}
+                            colors={['#9B9B9D', '#5A5C5E', '#6B3433', '#796261', '#3F3F53', '#454D42', '#2B2C3E', '#514646']}>
+                            <TouchableOpacity style={Styles.buttonSearch} onPress={() => navigation.navigate("Search")}>
+                                <Icon name="search" size={30} color="#dd1b7c" style={Styles.search} />
+                            </TouchableOpacity>
+                            {jujutsu.data.slice(0, 1).map((anime) => (
+                                <SafeAreaView key={anime.id} style={Styles.viewDirection}>
+                                    <TouchableOpacity onPress={() => {
+                                        navigation.navigate("Details", {
+                                            anime: anime.attributes.slug
+                                        });
+                                    }}>
+                                        <Image style={Styles.image}
+                                            source={{ uri: anime.attributes.posterImage.original }} />
+                                    </TouchableOpacity>
+                                    <SafeAreaView style={Styles.viewText}>
+                                        <Text style={Styles.title}>{anime.attributes.titles.en_jp}</Text>
+                                    </SafeAreaView>
                                 </SafeAreaView>
-                            </SafeAreaView>
-                        ))}
+                            ))}
+                        </LinearGradient>
                     </SafeAreaView>
                 )
                 }
                 {naruto.data && (
                     <SafeAreaView style={{}}>
-                        {naruto.data.slice(3, 4).map((anime) => (
-                            <SafeAreaView key={anime.id} style={Styles.viewDirection}>
-                                <TouchableOpacity onPress={() => {
-                                    navigation.navigate("Details", {
-                                        anime: anime.attributes.slug
-                                    });
-                                }}>
-                                    <Image style={Styles.image}
-                                        source={{ uri: anime.attributes.posterImage.original }} />
-                                </TouchableOpacity>
-                                <SafeAreaView style={Styles.viewText}>
-                                    <Text style={Styles.title}>{anime.attributes.titles.en_jp}</Text>
+                        <LinearGradient style={{ flex: 1 }}
+                            colors={['#4B232A', '#846747', '#472A22', '#665242', '#D4AD95', '#4C2823', '#34302E', '#BA6A3D']}>
+                            <TouchableOpacity style={Styles.buttonSearch} onPress={() => navigation.navigate("Search")}>
+                                <Icon name="search" size={30} color="#dd1b7c" style={Styles.search} />
+                            </TouchableOpacity>
+                            {naruto.data.slice(3, 4).map((anime) => (
+                                <SafeAreaView key={anime.id} style={Styles.viewDirection}>
+                                    <TouchableOpacity onPress={() => {
+                                        navigation.navigate("Details", {
+                                            anime: anime.attributes.slug
+                                        });
+                                    }}>
+                                        <Image style={Styles.image}
+                                            source={{ uri: anime.attributes.posterImage.original }} />
+                                    </TouchableOpacity>
+                                    <SafeAreaView style={Styles.viewText}>
+                                        <Text style={Styles.title}>{anime.attributes.titles.en_jp}</Text>
+                                    </SafeAreaView>
                                 </SafeAreaView>
-                            </SafeAreaView>
-                        ))}
+                            ))}
+                        </LinearGradient>
                     </SafeAreaView>
                 )
                 }
                 {attack.data && (
                     <SafeAreaView style={{}}>
-                        {attack.data.slice(0, 1).map((anime) => (
-                            <SafeAreaView key={anime.id} style={Styles.viewDirection}>
-                                <TouchableOpacity onPress={() => {
-                                    navigation.navigate("Details", {
-                                        anime: "attack"
-                                    });
-                                }}>
-                                    <Image style={Styles.image}
-                                        source={{ uri: anime.attributes.posterImage.original }} />
-                                </TouchableOpacity>
-                                <SafeAreaView style={Styles.viewText}>
-                                    <Text style={Styles.title}>{anime.attributes.titles.en}</Text>
+                        <LinearGradient style={{ flex: 1 }}
+                            colors={['#E0E8F6', '#D8EAFF', '#92BFFF', '#6376A3', '#645E52', '#A69C75', '#393426']}>
+                            <TouchableOpacity style={Styles.buttonSearch} onPress={() => navigation.navigate("Search")}>
+                                <Icon name="search" size={30} color="#dd1b7c" style={Styles.search} />
+                            </TouchableOpacity>
+                            {attack.data.slice(0, 1).map((anime) => (
+                                <SafeAreaView key={anime.id} style={Styles.viewDirection}>
+                                    <TouchableOpacity onPress={() => {
+                                        navigation.navigate("Details", {
+                                            anime: "attack"
+                                        });
+                                    }}>
+                                        <Image style={Styles.image}
+                                            source={{ uri: anime.attributes.posterImage.original }} />
+                                    </TouchableOpacity>
+                                    <SafeAreaView style={Styles.viewText}>
+                                        <Text style={Styles.title}>{anime.attributes.titles.en}</Text>
+                                    </SafeAreaView>
                                 </SafeAreaView>
-                            </SafeAreaView>
-                        ))}
+                            ))}
+                        </LinearGradient>
                     </SafeAreaView>
                 )
                 }
                 {hunter.data && (
                     <SafeAreaView style={{}}>
-                        {hunter.data.slice(1, 2).map((anime) => (
-                            <SafeAreaView key={anime.id} style={Styles.viewDirection}>
-                                <TouchableOpacity onPress={() => {
-                                    navigation.navigate("Details", {
-                                        anime: anime.attributes.slug
-                                    });
-                                }}>
-                                    <Image style={Styles.image}
-                                        source={{ uri: anime.attributes.posterImage.original }} />
-                                </TouchableOpacity>
-                                <SafeAreaView style={Styles.viewText}>
-                                    <Text style={Styles.title}>{anime.attributes.titles.en_jp}</Text>
+                        <LinearGradient style={{ flex: 1 }}
+                            colors={['#F7FCB2', '#EDF4B0', '#D5E491', '#84B15B', '#A6C1A4', '#89A68A', '#69D76E']}>
+                            <TouchableOpacity style={Styles.buttonSearch} onPress={() => navigation.navigate("Search")}>
+                                <Icon name="search" size={30} color="#dd1b7c" style={Styles.search} />
+                            </TouchableOpacity>
+                            {hunter.data.slice(1, 2).map((anime) => (
+                                <SafeAreaView key={anime.id} style={Styles.viewDirection}>
+                                    <TouchableOpacity onPress={() => {
+                                        navigation.navigate("Details", {
+                                            anime: anime.attributes.slug
+                                        });
+                                    }}>
+                                        <Image style={Styles.image}
+                                            source={{ uri: anime.attributes.posterImage.original }} />
+                                    </TouchableOpacity>
+                                    <SafeAreaView style={Styles.viewText}>
+                                        <Text style={Styles.title}>{anime.attributes.titles.en_jp}</Text>
+                                    </SafeAreaView>
                                 </SafeAreaView>
-                            </SafeAreaView>
-                        ))}
+                            ))}
+                        </LinearGradient>
                     </SafeAreaView>
                 )
                 }
             </ScrollView>
-
         </SafeAreaView >
     );
 };
@@ -236,6 +268,7 @@ const Styles = StyleSheet.create({
         alignSelf: "flex-end",
         paddingTop: 20,
         paddingRight: 25,
+        backgroundColor: "rgba(0, 0, 0, 0)",
     },
     viewText: {
         backgroundColor: '#fe1485',
