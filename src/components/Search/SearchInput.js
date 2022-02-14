@@ -1,5 +1,6 @@
 import React from "react";
-import { TextInput, StyleSheet } from "react-native";
+import { TextInput } from "react-native";
+import Styles from "./Styles";
 
 export default function SearchInput({ value, setText }) {
     return (
@@ -10,16 +11,3 @@ export default function SearchInput({ value, setText }) {
         />
     );
 };
-
-const Styles = StyleSheet.create({
-    search: {
-        marginLeft: 40,
-        marginRight: 40,
-        marginTop: 68,
-        marginBottom: 15,
-        color: '#ffffff',
-        borderBottomWidth: 1.2,
-        borderBottomColor: '#dd1b7c',
-        fontSize: 20,
-    }
-});

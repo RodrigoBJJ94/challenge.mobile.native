@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { SafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native";
 import NotLoading from "./NotLoading";
 import Data from "./Data";
+import Styles from "./Styles";
 
 export default function Details({ navigation, route }) {
     const [list, setList] = useState({});
@@ -32,7 +33,7 @@ export default function Details({ navigation, route }) {
 
     if (!loading) {
         return <NotLoading />
-    }
+    };
 
     return (
         <SafeAreaView style={Styles.viewDetails}>
@@ -48,10 +49,3 @@ export default function Details({ navigation, route }) {
         </SafeAreaView>
     );
 };
-
-const Styles = StyleSheet.create({
-    viewDetails: {
-        flex: 1,
-        backgroundColor: "#3f3f3f",
-    }
-});

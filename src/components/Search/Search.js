@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { View, Dimensions, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native";
 import SearchInput from "./SearchInput";
 import Button from "./Button";
 import Data from "./Data";
+import Styles from "./Styles";
 
 export default function Search({ navigation }) {
     const [text, setText] = useState("");
@@ -20,36 +21,18 @@ export default function Search({ navigation }) {
     }, [text, textSearch]);
 
     return (
-        <View style={Styles.searchMain}>
+        <SafeAreaView style={Styles.searchMain}>
             <SearchInput value={text} setText={(search) => setText(search)} />
             <Button setTextSearch={setTextSearch} text={text} />
             {list.data && (
-                <View style={Styles.searchDirection}>
+                <SafeAreaView style={Styles.searchDirection}>
                     {list.data.map((anime) => (
-                        <View key={anime.id} style={Styles.searchContainer} >
+                        <SafeAreaView key={anime.id} style={Styles.searchContainer} >
                             <Data navigation={navigation} anime={anime} />
-                        </View>
+                        </SafeAreaView>
                     ))}
-                </View>
+                </SafeAreaView>
             )}
-        </View>
+        </SafeAreaView>
     );
 };
-
-const Styles = StyleSheet.create({
-    searchMain: {
-        flex: 1,
-        backgroundColor: '#3f3f3f'
-    },
-    searchDirection: {
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "center",
-    },
-    searchContainer: {
-        width: Dimensions.get("screen").width / 2.9,
-        marginRight: 20,
-        marginLeft: 20,
-        alignItems: "center",
-    }
-});

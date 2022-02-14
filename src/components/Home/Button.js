@@ -3,16 +3,15 @@ import { TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import Styles from "./Styles";
 
-export default function Button({ setTextSearch, text }) {
+export default function Button({ navigation }) {
     return (
-        <TouchableOpacity
-            onPress={() => setTextSearch(text)}>
+        <TouchableOpacity style={Styles.buttonSearch}
+            onPress={() => navigation.navigate("Search")}>
             <Icon
                 name="search"
                 size={30}
                 color="#dd1b7c"
-                style={Styles.searchIcon}
-            />
+                style={Styles.search} />
         </TouchableOpacity>
     );
 };

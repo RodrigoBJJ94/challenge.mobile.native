@@ -1,7 +1,8 @@
 import React from "react";
-import { SafeAreaView, Text, TouchableOpacity, Image, ScrollView, StyleSheet } from "react-native";
+import { SafeAreaView, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import YoutubePlayer from "react-native-youtube-iframe";
+import Styles from "./Styles";
 
 export default function DataOne({ navigation, anime, animeData }) {
     return (
@@ -37,58 +38,3 @@ export default function DataOne({ navigation, anime, animeData }) {
         </>
     );
 };
-
-const Styles = StyleSheet.create({
-    viewVideo: {
-        marginTop: 16,
-    },
-    goBack: {
-        color: "#ffffff",
-        fontSize: 17,
-        position: "absolute",
-        marginLeft: 26,
-    },
-    buttonGoBack: {
-        position: "absolute",
-        height: 30,
-        width: "25%",
-        marginTop: 42,
-        justifyContent: "center",
-    },
-    iconButton: {
-        marginLeft: -1,
-    },
-    viewDirection: {
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    viewText: {
-        padding: 25,
-        marginTop: -9,
-        alignItems: "center",
-    },
-    viewGoBack: {
-        backgroundColor: "#fe1487",
-        width: "100%",
-        paddingTop: 74,
-        paddingBottom: 6,
-    },
-    synopsis: {
-        textAlign: "center",
-        color: '#ffffff',
-        fontSize: 16.5,
-    },
-    image: {
-        width: 140,
-        height: 200,
-        borderRadius: 10,
-        marginTop: 20,
-    },
-    title: {
-        color: "#ffffff",
-        fontSize: 17.5,
-        textAlign: "center",
-        fontWeight: "500",
-        marginTop: -35,
-    }
-});
