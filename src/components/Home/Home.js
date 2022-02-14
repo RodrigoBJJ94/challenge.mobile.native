@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { SafeAreaView, StyleSheet, TouchableOpacity, Image, Text, Dimensions, Animated } from "react-native";
+import { SafeAreaView, StyleSheet, TouchableOpacity, Image, Dimensions, Animated } from "react-native";
 import { background } from "./Background";
 import Statusbar from "./Statusbar";
 import Button from "./Button";
+import ImageHome from "./ImageHome";
+import TitleKimetsu from "./Titles/TitleKimetsu";
+import TitleEnJp from "./Titles/TitleEnJp";
+import TitleEn from "./Titles/TitleEn";
 import Styles from "./Styles";
 
 export default function Home({ navigation }) {
@@ -89,17 +93,8 @@ export default function Home({ navigation }) {
                     <SafeAreaView style={{}}>
                         {kimetsu.data.slice(6, 7).map((anime) => (
                             <SafeAreaView key={anime.id} style={Styles.viewDirection}>
-                                <TouchableOpacity onPress={() => {
-                                    navigation.navigate("Details", {
-                                        anime: anime.attributes.slug
-                                    });
-                                }}>
-                                    <Image style={Styles.image}
-                                        source={{ uri: anime.attributes.posterImage.original }} />
-                                </TouchableOpacity>
-                                <SafeAreaView style={Styles.viewText}>
-                                    <Text style={Styles.title}>Demon Slayer: Kimetsu no Y</Text>
-                                </SafeAreaView>
+                                <ImageHome navigation={navigation} anime={anime} />
+                                <TitleKimetsu />
                             </SafeAreaView>
                         ))}
                     </SafeAreaView>
@@ -108,17 +103,8 @@ export default function Home({ navigation }) {
                     <SafeAreaView style={{}}>
                         {one.data.slice(0, 1).map((anime) => (
                             <SafeAreaView key={anime.id} style={Styles.viewDirection}>
-                                <TouchableOpacity onPress={() => {
-                                    navigation.navigate("Details", {
-                                        anime: anime.attributes.slug
-                                    });
-                                }}>
-                                    <Image style={Styles.image}
-                                        source={{ uri: anime.attributes.posterImage.original }} />
-                                </TouchableOpacity>
-                                <SafeAreaView style={Styles.viewText}>
-                                    <Text style={Styles.title}>{anime.attributes.titles.en_jp}</Text>
-                                </SafeAreaView>
+                                <ImageHome navigation={navigation} anime={anime} />
+                                <TitleEnJp anime={anime} />
                             </SafeAreaView>
                         ))}
                     </SafeAreaView>
@@ -127,17 +113,8 @@ export default function Home({ navigation }) {
                     <SafeAreaView style={{}}>
                         {kimetsu.data.slice(0, 1).map((anime) => (
                             <SafeAreaView key={anime.id} style={Styles.viewDirection}>
-                                <TouchableOpacity onPress={() => {
-                                    navigation.navigate("Details", {
-                                        anime: anime.attributes.slug
-                                    });
-                                }}>
-                                    <Image style={Styles.image}
-                                        source={{ uri: anime.attributes.posterImage.original }} />
-                                </TouchableOpacity>
-                                <SafeAreaView style={Styles.viewText}>
-                                    <Text style={Styles.title}>Demon Slayer: Kimetsu no Y</Text>
-                                </SafeAreaView>
+                                <ImageHome navigation={navigation} anime={anime} />
+                                <TitleKimetsu />
                             </SafeAreaView>
                         ))}
                     </SafeAreaView>
@@ -146,17 +123,8 @@ export default function Home({ navigation }) {
                     <SafeAreaView style={{}}>
                         {jujutsu.data.slice(0, 1).map((anime) => (
                             <SafeAreaView key={anime.id} style={Styles.viewDirection}>
-                                <TouchableOpacity onPress={() => {
-                                    navigation.navigate("Details", {
-                                        anime: anime.attributes.slug
-                                    });
-                                }}>
-                                    <Image style={Styles.image}
-                                        source={{ uri: anime.attributes.posterImage.original }} />
-                                </TouchableOpacity>
-                                <SafeAreaView style={Styles.viewText}>
-                                    <Text style={Styles.title}>{anime.attributes.titles.en_jp}</Text>
-                                </SafeAreaView>
+                                <ImageHome navigation={navigation} anime={anime} />
+                                <TitleEnJp anime={anime} />
                             </SafeAreaView>
                         ))}
                     </SafeAreaView>
@@ -165,17 +133,8 @@ export default function Home({ navigation }) {
                     <SafeAreaView style={{}}>
                         {naruto.data.slice(2, 3).map((anime) => (
                             <SafeAreaView key={anime.id} style={Styles.viewDirection}>
-                                <TouchableOpacity onPress={() => {
-                                    navigation.navigate("Details", {
-                                        anime: anime.attributes.slug
-                                    });
-                                }}>
-                                    <Image style={Styles.image}
-                                        source={{ uri: anime.attributes.posterImage.original }} />
-                                </TouchableOpacity>
-                                <SafeAreaView style={Styles.viewText}>
-                                    <Text style={Styles.title}>{anime.attributes.titles.en_jp}</Text>
-                                </SafeAreaView>
+                                <ImageHome navigation={navigation} anime={anime} />
+                                <TitleEnJp anime={anime} />
                             </SafeAreaView>
                         ))}
                     </SafeAreaView>
@@ -190,11 +149,10 @@ export default function Home({ navigation }) {
                                     });
                                 }}>
                                     <Image style={Styles.image}
-                                        source={{ uri: anime.attributes.posterImage.original }} />
+                                        source={{ uri: anime.attributes.posterImage.original }}
+                                    />
                                 </TouchableOpacity>
-                                <SafeAreaView style={Styles.viewText}>
-                                    <Text style={Styles.title}>{anime.attributes.titles.en}</Text>
-                                </SafeAreaView>
+                                <TitleEn anime={anime} />
                             </SafeAreaView>
                         ))}
                     </SafeAreaView>
@@ -203,17 +161,8 @@ export default function Home({ navigation }) {
                     <SafeAreaView style={{}}>
                         {hunter.data.slice(1, 2).map((anime) => (
                             <SafeAreaView key={anime.id} style={Styles.viewDirection}>
-                                <TouchableOpacity onPress={() => {
-                                    navigation.navigate("Details", {
-                                        anime: anime.attributes.slug
-                                    });
-                                }}>
-                                    <Image style={Styles.image}
-                                        source={{ uri: anime.attributes.posterImage.original }} />
-                                </TouchableOpacity>
-                                <SafeAreaView style={Styles.viewText}>
-                                    <Text style={Styles.title}>{anime.attributes.titles.en_jp}</Text>
-                                </SafeAreaView>
+                                <ImageHome navigation={navigation} anime={anime} />
+                                <TitleEnJp anime={anime} />
                             </SafeAreaView>
                         ))}
                     </SafeAreaView>
