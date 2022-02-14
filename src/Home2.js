@@ -60,19 +60,16 @@ export default function Home2({ navigation }) {
     }, []);
 
     const data = [
-        'https://cdn.dribbble.com/users/3281732/screenshots/11192830/media/7690704fa8f0566d572a085637dd1eee.jpg?compress=1&resize=1200x1200',
-        'https://cdn.dribbble.com/users/3281732/screenshots/13130602/media/592ccac0a949b39f058a297fd1faa38e.jpg?compress=1&resize=1200x1200',
-        'https://cdn.dribbble.com/users/3281732/screenshots/9165292/media/ccbfbce040e1941972dbc6a378c35e98.jpg?compress=1&resize=1200x1200',
-        'https://cdn.dribbble.com/users/3281732/screenshots/11205211/media/44c854b0a6e381340fbefe276e03e8e4.jpg?compress=1&resize=1200x1200',
-        'https://cdn.dribbble.com/users/3281732/screenshots/7003560/media/48d5ac3503d204751a2890ba82cc42ad.jpg?compress=1&resize=1200x1200',
-        'https://cdn.dribbble.com/users/3281732/screenshots/6727912/samji_illustrator.jpeg?compress=1&resize=1200x1200',
-        'https://cdn.dribbble.com/users/3281732/screenshots/13661330/media/1d9d3cd01504fa3f5ae5016e5ec3a313.jpg?compress=1&resize=1200x1200'
-
+        'https://media.kitsu.io/anime/44081/cover_image/76f0b283fe588a7b0c4782d4c2dc9b99.jpg',
+        'https://media.kitsu.io/anime/12/cover_image/21ecb556255bd46b95aea4779d19789f.jpg',
+        'https://media.kitsu.io/anime/cover_images/41370/original.jpg',
+        'https://media.kitsu.io/anime/cover_images/42765/original.jpeg',
+        'https://media.kitsu.io/anime/cover_images/1555/original.jpg',
+        'https://media.kitsu.io/anime/cover_images/7442/original.png',
+        'https://media.kitsu.io/anime/cover_images/6448/original.jpg'
     ];
 
     const { width, height } = Dimensions.get("screen");
-    
-
     const scrollX = React.useRef(new Animated.Value(0)).current;
 
     return (
@@ -100,7 +97,7 @@ export default function Home2({ navigation }) {
                                 opacity
                             }
                         ]}
-                        blurRadius={50}
+                        blurRadius={20}
                     />
                 })}
             </SafeAreaView>
@@ -108,7 +105,7 @@ export default function Home2({ navigation }) {
             <TouchableOpacity style={Styles.buttonSearch} onPress={() => navigation.navigate("Search")}>
                 <Icon name="search" size={30} color="#dd1b7c" style={Styles.search} />
             </TouchableOpacity>
-            <Animated.ScrollView horizontal pagingEnabled={true} onScroll={Animated.event(
+            <Animated.ScrollView horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false} onScroll={Animated.event(
                 [{ nativeEvent: { contentOffset: { x: scrollX } } }],
                 { useNativeDriver: true }
             )}>
@@ -116,7 +113,7 @@ export default function Home2({ navigation }) {
                     <SafeAreaView style={{}}>
 
 
-                        {kimetsu.data.slice(7, 8).map((anime) => (
+                        {kimetsu.data.slice(6, 7).map((anime) => (
                             <SafeAreaView key={anime.id} style={Styles.viewDirection}>
                                 <TouchableOpacity onPress={() => {
                                     navigation.navigate("Details", {
@@ -207,7 +204,7 @@ export default function Home2({ navigation }) {
                 {naruto.data && (
                     <SafeAreaView style={{}}>
 
-                        {naruto.data.slice(3, 4).map((anime) => (
+                        {naruto.data.slice(2, 3).map((anime) => (
                             <SafeAreaView key={anime.id} style={Styles.viewDirection}>
                                 <TouchableOpacity onPress={() => {
                                     navigation.navigate("Details", {

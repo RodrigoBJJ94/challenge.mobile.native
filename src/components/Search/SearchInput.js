@@ -15,10 +15,10 @@ const Styles = StyleSheet.create({
     search: {
         marginLeft: 40,
         marginRight: 40,
-        marginTop: 50,
-        marginBottom: 50,
+        marginTop: 68,
+        marginBottom: 15,
         color: '#ffffff',
-        borderBottomWidth: 1.3,
+        borderBottomWidth: 1.2,
         borderBottomColor: '#dd1b7c',
         fontSize: 20,
     }

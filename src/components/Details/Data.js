@@ -29,7 +29,7 @@ export default function DataOne({ navigation, anime, animeData }) {
                             {anime.attributes.synopsis}
                         </Text>
                         <SafeAreaView style={Styles.viewVideo}>
-                            <YoutubePlayer height={520} width={352} videoId={anime.attributes.youtubeVideoId} />
+                            <YoutubePlayer height={480} width={354} videoId={anime.attributes.youtubeVideoId} />
                         </SafeAreaView>
                     </SafeAreaView>
                 </ScrollView>
@@ -44,7 +44,7 @@ const Styles = StyleSheet.create({
     },
     goBack: {
         color: "#ffffff",
-        fontSize: 16,
+        fontSize: 17,
         position: "absolute",
         marginLeft: 26,
     },
@@ -63,7 +63,7 @@ const Styles = StyleSheet.create({
         justifyContent: "center",
     },
     viewText: {
-        padding: 20,
+        padding: 25,
         marginTop: -9,
         alignItems: "center",
     },
@@ -76,13 +76,13 @@ const Styles = StyleSheet.create({
     synopsis: {
         textAlign: "center",
         color: '#ffffff',
-        fontSize: 16.8,
+        fontSize: 16.5,
     },
     image: {
         width: 140,
         height: 200,
         borderRadius: 10,
-        marginTop: 16,
+        marginTop: 20,
     },
     title: {
         color: "#ffffff",

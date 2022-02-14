@@ -13,8 +13,7 @@ export default function Button({ setTextSearch, text }) {
 const Styles = StyleSheet.create({
     search: {
         alignSelf: 'flex-end',
-        marginTop: -90,
-        marginBottom: 30,
+        marginTop: -54,
         marginRight: 40,
     }
 });

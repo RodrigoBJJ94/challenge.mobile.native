@@ -20,13 +20,13 @@ export default function Data({ navigation, anime }) {
 const Styles = StyleSheet.create({
     image: {
         width: 140,
-        height: 159,
+        height: 165,
         borderRadius: 6,
     },
     titles: {
         marginTop: 8,
         marginBottom: 8,
         fontSize: 15.3,
-        color: '#ffffff'
+        color: '#ffffff',
     }
 });
